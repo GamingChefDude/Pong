@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
-    public static boolean up, down;
+    public static boolean up1, down1, up2, down2;
 
     // don't use
     @Override
@@ -16,10 +16,16 @@ public class KeyHandler implements KeyListener {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_W) {
-            up = true;
+            up1 = true;
         }
         if (key == KeyEvent.VK_S) {
-            down = true;
+            down1 = true;
+        }
+        if (key == KeyEvent.VK_UP) {
+            up2 = true;
+        }
+        if (key == KeyEvent.VK_DOWN) {
+            down2 = true;
         }
     }
 
@@ -28,10 +34,16 @@ public class KeyHandler implements KeyListener {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_W) {
-            up = false;
+            up1 = false;
         }
         if (key == KeyEvent.VK_S) {
-            down = false;
+            down1 = false;
+        }
+        if (key == KeyEvent.VK_UP) {
+            up2 = false;
+        }
+        if (key == KeyEvent.VK_DOWN) {
+            down2 = false;
         }
     }
 }

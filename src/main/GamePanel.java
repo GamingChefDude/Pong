@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
+    // make multiple players
+    Player player1 = new Player(screenHeight / 2 - Player.height / 2, 0, 1);
+    Player player2 = new Player(screenHeight / 2 - Player.height / 2, screenWidth - Player.width, 2);
+
     // variables
     public static int screenWidth = 800;
     public static int screenHeight = 600;
@@ -33,7 +37,7 @@ public class GamePanel extends JPanel implements Runnable {
         // running update and repaint 60 times a second because fps = 60
 
         // making variables for delta time / the fps
-        double drawInterval = 1000000000/fps;
+        double drawInterval = (double) 1000000000 /fps;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -64,14 +68,16 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     void update() {
-        Player.update();
+        player1.update();
+        player2.update();
         Ball.update();
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Player.draw(g);
+        player1.draw(g);
+        player2.draw(g);
         Ball.draw(g);
 
         g.dispose();
