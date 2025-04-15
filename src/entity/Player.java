@@ -8,8 +8,8 @@ public class Player {
     int speed = 7;
     public static int width = 15;
     public static int height = 125;
-    int posY;
-    int posX;
+    public int posY;
+    public int posX;
     int id;
 
     public Player(int posY, int posX, int id) {

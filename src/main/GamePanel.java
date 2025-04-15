@@ -9,6 +9,7 @@ public class GamePanel extends JPanel implements Runnable {
     // make multiple players
     Player player1 = new Player(screenHeight / 2 - Player.height / 2, 0, 1);
     Player player2 = new Player(screenHeight / 2 - Player.height / 2, screenWidth - Player.width, 2);
+    Ball ball = new Ball();
 
     // variables
     public static int screenWidth = 800;
@@ -67,10 +68,32 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
+    public boolean checkCollision(Player p, Ball b) {
+        return p.posX < b.posX + b.width &&
+                p.posX + Player.width > b.posX &&
+                p.posY < b.posY + b.height &&
+                p.posY + Player.height > b.posY;
+    }
+
+    public void collision() {
+        Ball.speed = -Ball.speed;
+    }
+
     void update() {
         player1.update();
         player2.update();
-        Ball.update();
+        ball.update();
+
+        if (checkCollision(player1, ball)) {
+            // Handle collision
+            collision();
+        }
+
+        if (checkCollision(player2, ball)) {
+            // Handle collision
+            collision();
+        }
+
     }
 
     @Override
@@ -78,7 +101,7 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         player1.draw(g);
         player2.draw(g);
-        Ball.draw(g);
+        ball.draw(g);
 
         g.dispose();
     }
