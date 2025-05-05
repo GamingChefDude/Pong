@@ -86,12 +86,10 @@ public class GamePanel extends JPanel implements Runnable {
         ball.update();
 
         if (checkCollision(player1, ball)) {
-            // Handle collision
             collision();
         }
 
         if (checkCollision(player2, ball)) {
-            // Handle collision
             collision();
         }
 
