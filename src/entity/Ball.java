@@ -5,14 +5,20 @@ import java.awt.*;
 
 public class Ball {
     // ball variables
-    public static int speed = 5;
     public int width = 15;
     public int height = 15;
     public int posY = GamePanel.screenHeight / 2 -height;
     public int posX = GamePanel.screenWidth / 2 - width;
+    public int velocityY = 7;
+    public int velocityX = 5;
 
     public void update() {
-        posX -= speed;
+        if (posY <= 0 || posY >= GamePanel.screenHeight - height) {
+            velocityY = -velocityY;
+            posY += velocityY;
+        }
+        posX += velocityX;
+        posY += velocityY;
     }
 
     public void draw(Graphics g) {

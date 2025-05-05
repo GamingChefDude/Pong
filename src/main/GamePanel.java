@@ -76,7 +76,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void collision() {
-        Ball.speed = -Ball.speed;
+        ball.velocityX = -ball.velocityX;
+        ball.posX += ball.velocityX;
     }
 
     void update() {
