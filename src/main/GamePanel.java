@@ -15,6 +15,8 @@ public class GamePanel extends JPanel implements Runnable {
     public static int screenWidth = 800;
     public static int screenHeight = 600;
     int fps = 60;
+    public static int leftScore = 0;
+    public static int rightScore = 0;
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
@@ -101,6 +103,14 @@ public class GamePanel extends JPanel implements Runnable {
         player1.draw(g);
         player2.draw(g);
         ball.draw(g);
+
+        int scoreSize = 30;
+        int scoreX = screenWidth / 2 - 85;
+        int scoreY = 30;
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, scoreSize));
+        g.drawString("Score: " + leftScore + " - " + rightScore, scoreX, scoreY);
 
         g.dispose();
     }

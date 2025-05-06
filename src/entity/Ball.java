@@ -17,6 +17,18 @@ public class Ball {
             velocityY = -velocityY;
             posY += velocityY;
         }
+
+        if (posX <= -width * 2) {
+            GamePanel.leftScore++;
+            posX = GamePanel.screenWidth / 2 - width;
+            velocityX = -velocityX;
+        }
+
+        if (posX >= GamePanel.screenWidth + width * 2) {
+            GamePanel.rightScore++;
+            posX = GamePanel.screenWidth / 2 - width;
+            velocityX = -velocityX;
+        }
         posX += velocityX;
         posY += velocityY;
     }
