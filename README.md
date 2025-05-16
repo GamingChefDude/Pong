@@ -14,12 +14,15 @@ Clean, minimal code structure
 
 Frame-based animation with consistent update loop
 
-🎮 Controls
+
+## 🎮 Controls
+---
 Player	Controls
 Left	W / S
 Right	↑ / ↓
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
+---
 Language: Java
 
 Graphics: Java AWT / Swing
