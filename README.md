@@ -1,7 +1,7 @@
 ## 🏓 Pong — Java Edition
-
-Welcome to a simple but classic remake of Pong built in Java using basic object-oriented programming principles. This is part of my learning journey in game development, and a great starting point for anyone looking to get into Java game dev!
 ---
+Welcome to a simple but classic remake of Pong built in Java using basic object-oriented programming principles. This is part of my learning journey in game development, and a great starting point for anyone looking to get into Java game dev!
+
 ## 🚀 Features
 ---
 Classic 2D Pong gameplay
