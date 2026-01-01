@@ -53,7 +53,7 @@ That's it! The game window should launch and you're ready to play.
 
 1. Download the latest `.jar` file from the [Releases](https://github.com/GamingChefDude/Pong/releases/tag/v.1.0) tab.
 2. Click it (It starts to download).
-3. Click the download and play.
+3. Click the download and play. (You need to have java installed on you device)
 4. Have fun!
 
 ## 🧠 Learning Focus
